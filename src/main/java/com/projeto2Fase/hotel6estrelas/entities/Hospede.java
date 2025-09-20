@@ -1,16 +1,15 @@
 package com.projeto2Fase.hotel6estrelas.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "hospedes")
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Hospede {

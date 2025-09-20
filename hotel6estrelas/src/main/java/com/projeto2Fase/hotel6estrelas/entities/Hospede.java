@@ -26,4 +26,5 @@ public class Hospede {
 
     @OneToMany
     private List<Reserva> reservas = new ArrayList<>();
+
 }

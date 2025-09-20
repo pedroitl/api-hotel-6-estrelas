@@ -26,11 +26,12 @@ public class Reserva {
     @ManyToOne
     @JoinColumn(name = "hospede_id")
     private Hospede hospede = new Hospede();
-    //@ManyToMany
-    //private List<Servico> servico = new ArrayList<>();
+    @ManyToMany
+    private List<Servico> servico = new ArrayList<>();
     //@OneToOne
     //private Pagamento pagamento = new Pagamento();
     //@OneToMany
     //@JoinColumn(name = "quarto_id")
     //private List<Quarto> quarto = new ArrayList<>();
+
 }

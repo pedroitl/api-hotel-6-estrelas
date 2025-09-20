@@ -18,9 +18,12 @@ public class Hospede {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
     private String nome;
     private String email;
     private String telefone;
     private String cpf;
 
+    @OneToMany
+    private List<Reserva> reservas = new ArrayList<>();
 }

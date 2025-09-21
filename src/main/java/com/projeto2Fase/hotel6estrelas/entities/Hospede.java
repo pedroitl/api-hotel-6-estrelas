@@ -23,7 +23,7 @@ public class Hospede {
     private String telefone;
     private String cpf;
 
-    @OneToMany
+    @OneToMany(mappedBy = "hospede", cascade = CascadeType.ALL)
     private List<Reserva> reservas = new ArrayList<>();
 
 }

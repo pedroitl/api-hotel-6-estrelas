@@ -16,9 +16,12 @@ public class Servico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column
     private String nome;
     private boolean disponibilidade;
     private double preco;
+
     @OneToMany
     private List<Reserva> reservas = new ArrayList<>();
 

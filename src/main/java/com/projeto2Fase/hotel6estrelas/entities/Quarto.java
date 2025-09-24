@@ -1,5 +1,6 @@
 package com.projeto2Fase.hotel6estrelas.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 import com.projeto2Fase.hotel6estrelas.enums.TipoQuarto;
@@ -7,8 +8,7 @@ import com.projeto2Fase.hotel6estrelas.enums.TipoQuarto;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "quartos")
 @NoArgsConstructor
@@ -27,6 +27,8 @@ public class Quarto {
     @Column
     private TipoQuarto tipo;
 
-    @OneToMany(mappedBy = "quarto", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "quartos")
+    @JsonIgnoreProperties({"dataEntrada", "dataSaida", "hospede", "servico", "pagamento", "quartos"})
     private List<Reserva> reservas = new ArrayList<>();
+
 }

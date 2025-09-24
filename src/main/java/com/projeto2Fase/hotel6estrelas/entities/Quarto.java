@@ -2,7 +2,7 @@ package com.projeto2Fase.hotel6estrelas.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-import com.projeto2Fase.hotel6estrelas.enums.enumTipoQuarto;
+import com.projeto2Fase.hotel6estrelas.enums.TipoQuarto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class Quarto {
 
     @Enumerated(EnumType.STRING)
     @Column
-    private enumTipoQuarto tipo;
+    private TipoQuarto tipo;
 
     @OneToMany(mappedBy = "quarto", cascade = CascadeType.ALL)
     private List<Reserva> reservas = new ArrayList<>();

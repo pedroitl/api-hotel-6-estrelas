@@ -11,13 +11,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "reserva")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Reserva {
-    @Getter
-    @Setter
+   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

@@ -1,20 +1,19 @@
 package com.projeto2Fase.hotel6estrelas.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
+import com.projeto2Fase.hotel6estrelas.enums.enumPagamento;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import com.projeto2Fase.hotel6estrelas.entities.Reserva;
-import com.projeto2Fase.hotel6estrelas.entities.MetodoPagamento;
+
 
 @Entity
 @Table(name = "pagamento")
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
+@Data
 public class Pagamento {
 
     @Id
@@ -24,9 +23,12 @@ public class Pagamento {
     private double valor;
 
     @Enumerated(EnumType.STRING)
-    private MetodoPagamento metodo;
+    @Column
+    private enumPagamento metodo;
 
     @OneToOne
     @JoinColumn(name = "reserva_id")
+    @JsonIgnoreProperties({"dataEntrada", "dataSaida", "hospede", "servico", "pagamento", "quartos"})
     private Reserva reserva;
+
 }

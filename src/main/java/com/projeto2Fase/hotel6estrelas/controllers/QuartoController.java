@@ -16,7 +16,7 @@ public class QuartoController {
     public List<Quarto> listarQuartos() {
         return quartoService.listarQUartos();
     }
-
+    @PostMapping
     public Quarto castarQuarto(@RequestBody Quarto quarto) {
         return quartoService.cadastrarQuarto(quarto);
     }
